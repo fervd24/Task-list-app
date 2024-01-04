@@ -4,7 +4,7 @@ function TaskApp() {
 
   return (
     <div>
-      <h1>Todo List App</h1>
+      <h1>Task List App</h1>
       <TaskInput/>
     </div>
   )
