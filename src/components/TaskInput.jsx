@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TaskList from "./TaskList";
 
 
 function TaskInput() {
@@ -11,15 +12,31 @@ function TaskInput() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         setTaskList([
-                ...taskList, {
-                id: crypto.randomUUID(),
-                task: inputValue}
+                ...taskList, 
+                {
+                    id: crypto.randomUUID(),
+                    task: inputValue,
+                    completed: false
+                }
             ]);
 
         setInputValue('');
     }
+
+    const toggleCheckbox = (id) => {
+        setTaskList(taskList.map(task => {
+            if(task.id === id){
+                return {
+                    ...task,
+                    completed: !task.completed
+                };
+            }
+            return task;
+        }))
+    }
+
     return(
         <>
             <form onSubmit={handleSubmit}>
@@ -32,9 +49,7 @@ function TaskInput() {
                     <button type="submit">Add task</button>
                 </label>
             </form>
-            <ul>
-                {taskList.map(e => <li key={e.id}>{e.task}</li>)}
-            </ul>
+            <TaskList tasks={taskList} toggleCheckbox={toggleCheckbox}/>
         </>
     )
     
