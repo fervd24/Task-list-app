@@ -18,11 +18,29 @@ function TaskInput() {
                 {
                     id: crypto.randomUUID(),
                     task: inputValue,
-                    completed: false
+                    completed: false,
+                    isUpdating: false
                 }
             ]);
 
         setInputValue('');
+    }
+
+    
+    const handleUpdateTask = (id, propertyName, newValue) => {
+        setTaskList(taskList.map(task => {
+            if(task.id === id){
+                return {
+                    ...task,
+                    [propertyName]: newValue
+                };
+            }
+            return task;
+        }))
+    }
+
+    const handleDeleteTask = (id) => {
+        setTaskList(taskList.filter(task => task.id !== id))
     }
 
     const toggleCheckbox = (id) => {
@@ -49,7 +67,12 @@ function TaskInput() {
                     <button type="submit">Add task</button>
                 </label>
             </form>
-            <TaskList tasks={taskList} toggleCheckbox={toggleCheckbox}/>
+            <TaskList 
+                tasks={taskList} 
+                toggleCheckbox={toggleCheckbox} 
+                handleUpdateTask={handleUpdateTask}
+                handleDeleteTask={handleDeleteTask}
+            />
         </>
     )
     
