@@ -4,10 +4,9 @@ import taskReducer from './TaskReducer';
 
 export const TaskContext = createContext();
 
-const initialState = [];
-
 const TaskContextProvider = ({ children }) => {
-  const [tasks, dispatch] = useReducer(taskReducer, initialState);
+  //TODO: implement getTasks from localStorage here
+  const [tasks, dispatch] = useReducer(taskReducer, JSON.parse(localStorage.getItem('tasks')));
 
   return (
     <TaskContext.Provider value={{ tasks, dispatch }}>
