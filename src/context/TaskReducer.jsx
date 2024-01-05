@@ -7,10 +7,16 @@ const taskReducer = (state, action) => {
           completed: false, 
           isUpdating: false
         }];
-        case 'DELETE_TASK':
-            return state.filter(task => task.id !== action.id);
-        default:
-            return state;
+      case 'UPDATE_CHECKBOX_TASK':
+        return state.map(task => task.id === action.id ? {...task, completed: !task.completed}: task )
+      case 'UPDATE_BUTTON_TASK':
+        return state.map(task => task.id === action.id ? {...task, isUpdating: !task.isUpdating}: task )
+      case 'UPDATE_TASK_NAME':
+        return state.map(task => task.id === action.id ? {...task, title: action.updatedValue}: task )
+      case 'DELETE_TASK':
+        return state.filter(task => task.id !== action.id);
+      default:
+        return state;
     }
   };
   
