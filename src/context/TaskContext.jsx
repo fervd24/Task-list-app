@@ -1,12 +1,24 @@
-import React, { createContext, useReducer, useContext } from 'react';
+import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import taskReducer from './TaskReducer';
 
 
 export const TaskContext = createContext();
 
 const TaskContextProvider = ({ children }) => {
-  //TODO: implement getTasks from localStorage here
-  const [tasks, dispatch] = useReducer(taskReducer, JSON.parse(localStorage.getItem('tasks')));
+  //componentDidMount
+  const [tasks, dispatch] = useReducer(taskReducer, [], () => {
+    const storedTasks = localStorage.getItem('tasks');
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    //componentWillUnmount
+    return (() => {
+      console.log(tasks);
+    })
+    //componentDidUpdate
+  }, [tasks]);
 
   return (
     <TaskContext.Provider value={{ tasks, dispatch }}>
