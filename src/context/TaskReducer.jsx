@@ -2,31 +2,24 @@ const taskReducer = (state, action) => {
     
     switch (action.type) {
       case 'ADD_TASK':
-        const newState = [...state, { 
+        return [...state, { 
           id: crypto.randomUUID() , 
           title: action.task,
           completed: false, 
           isUpdating: false
         }]
-
-        localStorage.setItem('tasks', JSON.stringify(newState));
-        return newState;
       case 'UPDATE_CHECKBOX_TASK':
-        const newCheckboxState = state.map(task => task.id === action.id ? {...task, completed: !task.completed}: task )
-        localStorage.setItem('tasks', JSON.stringify(newCheckboxState));
-        return newCheckboxState
+        return state.map(task => task.id === action.id ? {...task, completed: !task.completed}: task )
+        
       case 'UPDATE_BUTTON_TASK':
-        const newIsUpdatingState = state.map(task => task.id === action.id ? {...task, isUpdating: !task.isUpdating}: task )
-        localStorage.setItem('tasks', JSON.stringify(newIsUpdatingState));
-        return newIsUpdatingState
+        return state.map(task => task.id === action.id ? {...task, isUpdating: !task.isUpdating}: task )
+        
       case 'UPDATE_TASK_NAME':
-        const updatedState = state.map(task => task.id === action.id ? {...task, title: action.updatedValue}: task )
-        localStorage.setItem('tasks', JSON.stringify(updatedState));
-        return updatedState
-        case 'DELETE_TASK':
-          const newDeletedState = state.filter(task => task.id !== action.id);
-          localStorage.setItem('tasks', JSON.stringify(newDeletedState));
-          return newDeletedState
+        return state.map(task => task.id === action.id ? {...task, title: action.updatedValue}: task )
+        
+      case 'DELETE_TASK':
+        return state.filter(task => task.id !== action.id);
+          
       default:
         return state;
     }
