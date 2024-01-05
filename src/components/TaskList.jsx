@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTaskContext } from '../context/TaskContext';
 import useTaskActions from '../hooks/useTaskActions';
 
-export default const TaskList = () => {
+const TaskList = () => {
   const {tasks} = useTaskContext();
   const taskActions = useTaskActions();
   const [currentUpdateValue, setCurrentUpdateValue] = useState('');
@@ -31,3 +31,5 @@ export default const TaskList = () => {
     </ul>
   );
 };
+
+export default TaskList;

@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { TaskContext } from "../context/TaskContext";
 import useTaskActions from "../hooks/useTaskActions";
 
 
-function TaskForm() {
+const TaskForm = () => {
     const { dispatch } = useContext(TaskContext);
     const [newTask, setNewTask] = useState('');
 
