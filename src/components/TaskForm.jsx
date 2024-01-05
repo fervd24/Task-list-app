@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
-import { TaskContext } from "../context/TaskContext";
+import {  useState } from "react";
 import useTaskActions from "../hooks/useTaskActions";
+import "./TaskForm.css"
 
 
 const TaskForm = () => {
-    const { dispatch } = useContext(TaskContext);
     const [newTask, setNewTask] = useState('');
 
     const taskActions = useTaskActions();
@@ -17,7 +16,7 @@ const TaskForm = () => {
     };
 
     return (
-        <div>
+        <div className="form-container">
           <input
             type="text"
             value={newTask}

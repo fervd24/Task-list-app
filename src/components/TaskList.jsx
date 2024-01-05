@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTaskContext } from '../context/TaskContext';
 import useTaskActions from '../hooks/useTaskActions';
+import "./TaskList.css"
 
 const TaskList = () => {
   const {tasks} = useTaskContext();
@@ -8,24 +9,30 @@ const TaskList = () => {
   const [currentUpdateValue, setCurrentUpdateValue] = useState('');
 
   return (
-    <ul>
+    <ul className='task-list'>
       {tasks.map(task => (
-        <li key={task.id}>
-            <input type='checkbox' checked={task.completed} onChange={() => taskActions.handleUpdateCheckboxTask(task.id)}/>
-            <span style={task.completed ? {textDecoration: 'line-through'}: null}>{task.title}</span>
-            {
-              task.isUpdating 
-                ? <div>
-                    <input type='text' onChange={e => setCurrentUpdateValue(e.target.value)}/>
-                    <button onClick={() => taskActions.handleUpdateTaskName(task.id, currentUpdateValue)}>Add new name</button>
-                  </div>:null
-            }
-            <button onClick={() => taskActions.handleUpdateButtonTask(task.id)}>{
-              task.isUpdating 
-                ? <span>Close</span>
-                : <span>Update</span> }
-            </button>
-            <button onClick={() => taskActions.handleDeleteTask(task.id)}>Delete</button>
+        <li key={task.id} className='list-item'>
+            <div className='header-item'>
+                <input type='checkbox' checked={task.completed} onChange={() => taskActions.handleUpdateCheckboxTask(task.id)} className='checkbox-item'/>
+                <span style={task.completed ? {textDecoration: 'line-through'}: null}>{task.title}</span>
+                {
+                task.isUpdating 
+                    ? <div>
+                        <input type='text' onChange={e => setCurrentUpdateValue(e.target.value)} className='input-update'/>
+                        <button onClick={() => taskActions.handleUpdateTaskName(task.id, currentUpdateValue)} className='confirm-update-btn' >Confirm</button>
+                    </div>:null
+                }
+
+            </div>
+            <div>
+                {
+                task.isUpdating 
+                    ? <button onClick={() => taskActions.handleUpdateButtonTask(task.id)} className='close-btn'>Close</button>
+                    : <button onClick={() => taskActions.handleUpdateButtonTask(task.id)} className='update-btn'>Update</button>
+                    }
+                <button onClick={() => taskActions.handleDeleteTask(task.id)} className='del-btn'>Delete</button>
+
+            </div>
         </li>
       ))}
     </ul>
