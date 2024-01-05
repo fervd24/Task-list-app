@@ -14,8 +14,8 @@
     font-weight: 600;
     height: 30px;
     width: 100px;
-    border-radius: 4px;
-    border-style: nones;
+    border-radius: 6px;
+    border-style: none;
     margin-left: 3px;
 }
 
@@ -25,8 +25,7 @@
 }
 
 .update-btn{
-    background-color: green;
-    color: white;
+    background-color: #FFDB58;
 }
 
 .del-btn{
@@ -35,8 +34,8 @@
 }
 
 .confirm-update-btn{
-    background-color: white;
-    font-weight: 600
+    background-color: green;
+    font-weight: 600;
 }
 
 .header-item{
@@ -44,7 +43,7 @@
 }
 
 .input-update{
-    background-color: white;
+    background-color: #ddd;
     border-radius: 4px;
     height: 20px;
 }
@@ -54,6 +53,6 @@
 }
 
 .close-btn{
-    background-color: black;
+    background-color: blue;
     color: white;
 }

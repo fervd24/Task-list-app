@@ -1,20 +1,23 @@
 
 .form-container input{
     margin-right: 10px;
-    background-color: white;
+    background-color: #555;
     border-radius: 4px;
-    height: 22px;
-    width: 200px;
+    height: 30px;
+    width: 240px;
+    border-style: none;
+    color: white;
 }
 
 .form-container button{
-    background-color: aliceblue;
-    height: 28px;
-    border-radius: 4px;
+    background-color: #FFDB58;
+    height: 33px;
+    border-radius: 6px;
     font-weight: 600;
+    border-style: none;
 }
 
 .form-container button:hover{
-    background-color: #ccc;
+    opacity: 0.8;
     cursor: pointer;
 }
