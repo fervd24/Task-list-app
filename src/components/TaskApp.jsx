@@ -1,5 +1,5 @@
 import { TaskContextProvider } from "../context/TaskContext"
-import TaskInput from "./TaskInput"
+import TaskForm from "./TaskForm"
 
 function TaskApp() {
 
@@ -7,7 +7,7 @@ function TaskApp() {
     <TaskContextProvider>
       <div>
         <h1>Task List App</h1>
-        <TaskInput/>
+        <TaskForm/>
       </div>
     </TaskContextProvider>
   )

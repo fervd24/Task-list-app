@@ -2,7 +2,7 @@ import { useState } from "react";
 import TaskList from "./TaskList";
 
 
-function TaskInput() {
+function TaskForm() {
     const [inputValue, setInputValue] = useState("");
     const [taskList, setTaskList] = useState([])
 
@@ -79,4 +79,4 @@ function TaskInput() {
 }
 
 
-export default TaskInput;
+export default TaskForm;
