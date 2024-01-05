@@ -24,7 +24,7 @@ export default function TaskList({tasks, toggleCheckbox, handleUpdateTask, handl
                         <button onClick={() => handleUpdateTask(task.id, 'task', updateInputValue)}>Add new task name</button>
                     </div>: null}
                     {task.isUpdating 
-                        ? <button onClick={() => handleUpdateTask(task.id, 'isUpdating', !task.isUpdating)}>Cancel</button>
+                        ? <button onClick={() => handleUpdateTask(task.id, 'isUpdating', !task.isUpdating)}>Close</button>
                         : <button onClick={() => handleUpdateTask(task.id, 'isUpdating', !task.isUpdating)}>Update</button>}
                     
                     <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
