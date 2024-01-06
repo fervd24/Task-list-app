@@ -16,7 +16,7 @@ const TaskContextProvider = ({ children }) => {
     //componentWillUnmount
     return (() => {
       console.log(tasks);
-      // localStorage.removeItem('tasks');
+      //localStorage.removeItem('tasks');
     })
     //componentDidUpdate
   }, [tasks]);

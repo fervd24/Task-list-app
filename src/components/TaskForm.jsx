@@ -20,6 +20,7 @@ const TaskForm = () => {
           <input
             type="text"
             value={newTask}
+            placeholder="Enter a task..."
             onChange={(e) => setNewTask(e.target.value)}
           />
           <button onClick={handleAddTask}>Add Task</button>
