@@ -10,7 +10,7 @@ const TaskList = () => {
 
   return (
     <ul className='task-list'>
-      <h1>Context list</h1>
+      <h1>Tasks</h1>
       {tasks.map(task => (
         <li key={task.id} className='list-item'>
             <div className='header-item'>
