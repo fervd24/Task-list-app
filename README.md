@@ -27,7 +27,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
 
 ### Installation
 1. Clone the repository:
-   git clone https://github.com/your-username/task-list-app.git
+   git clone https://github.com/fervd24/Task-list-app
 
 2. Install dependencies:
     - npm install
@@ -38,27 +38,28 @@ Start the development server:
     - npm run dev
 
 ## Folder Structure
-task-list-app/
-|-- config/
-|-- public/
-|-- src/
-|   |-- __mocks__/
-|   |-- __test__/
-|   |-- components/
-|   |   |-- TaskForm.jsx
-|   |   |-- TaskForm.css
-|   |   |-- TaskList.jsx
-|   |   |-- TaskList.css
-|   |   |-- TaskApp.jsx
-|   |   |-- TaskApp.css
-|   |-- context/
-|   |   |-- TaskContext.jsx
-|   |   |-- TaskReducer.jsx
-|   |-- hook/
-|   |   |-- useTaskActions.jsx
-|   |-- main.jsx
-|-- package.json
-|-- README.md
+
+task-list-app/  
+|-- config/  
+|-- public/  
+|-- src/  
+|   |-- __mocks__/  
+|   |-- __test__/  
+|   |-- components/  
+|   |   |-- TaskForm.jsx  
+|   |   |-- TaskForm.css  
+|   |   |-- TaskList.jsx  
+|   |   |-- TaskList.css  
+|   |   |-- TaskApp.jsx  
+|   |   |-- TaskApp.css  
+|   |-- context/  
+|   |   |-- TaskContext.jsx  
+|   |   |-- TaskReducer.jsx  
+|   |-- hook/  
+|   |   |-- useTaskActions.jsx  
+|   |-- main.jsx  
+|-- package.json  
+|-- README.md  
 
 ## Running tests
 To run tests use the following command:
