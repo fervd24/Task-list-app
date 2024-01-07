@@ -2,6 +2,8 @@
 
 A simple task list app built with ReactJS and Vite.
 
+![Demo](demogif.gif)
+
 ## Table of Contents
 
 - [Features](#features)
