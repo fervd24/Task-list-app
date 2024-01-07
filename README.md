@@ -43,21 +43,21 @@ task-list-app/
 |-- config/  
 |-- public/  
 |-- src/  
-|   |-- __mocks__/  
-|   |-- __test__/  
-|   |-- components/  
-|   |   |-- TaskForm.jsx  
-|   |   |-- TaskForm.css  
-|   |   |-- TaskList.jsx  
-|   |   |-- TaskList.css  
-|   |   |-- TaskApp.jsx  
-|   |   |-- TaskApp.css  
-|   |-- context/  
-|   |   |-- TaskContext.jsx  
-|   |   |-- TaskReducer.jsx  
-|   |-- hook/  
-|   |   |-- useTaskActions.jsx  
-|   |-- main.jsx  
+|(\t)   |-- __mocks__/  
+|(\t)   |-- __test__/  
+|(\t)   |-- components/  
+|(\t)   |(\t)   |-- TaskForm.jsx  
+|(\t)   |(\t)   |-- TaskForm.css  
+|(\t)   |(\t)   |-- TaskList.jsx  
+|(\t)   |(\t)   |-- TaskList.css  
+|(\t)   |(\t)   |-- TaskApp.jsx  
+|(\t)   |(\t)   |-- TaskApp.css  
+|(\t)   |-- context/  
+|(\t)   |(\t)   |-- TaskContext.jsx  
+|(\t)   |(\t)   |-- TaskReducer.jsx  
+|(\t)   |-- hook/  
+|(\t)   |(\t)   |-- useTaskActions.jsx  
+|(\t)   |-- main.jsx  
 |-- package.json  
 |-- README.md  
 
